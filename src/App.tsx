@@ -1,5 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
+import Config from 'react-native-config';
+import StorybookUIRoot from '../storybook';
 
 const App = () => (
   <SafeAreaView>
@@ -7,4 +9,4 @@ const App = () => (
   </SafeAreaView>
 );
 
-export default App;
+export default Config.LOAD_STORYBOOK === 'true' ? StorybookUIRoot : App;
